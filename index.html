@@ -76,6 +76,9 @@
 				if (page) {
 					loadPage(page);
 				}
+
+				$('.menu-item a').removeClass('selected');
+				$(this).addClass('selected');
 			});
 		});
 
