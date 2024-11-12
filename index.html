@@ -69,7 +69,7 @@
 		$(document).ready(function () {
 			$('.menu-item a').on('click', function (event) {
 				event.preventDefault();
-				let page = $(this).title;
+				let page = this.title;
 				if (page) {
 					loadPage(page);
 				}
