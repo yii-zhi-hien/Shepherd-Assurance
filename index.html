@@ -13,18 +13,18 @@
 		<h1>Shepherd Assurance</h1>
 		<nav>
 			<ul class="menu-item">
-				<li><a href="#' title="home.html">Home</a></li>
+				<li><a href="#" data-page="home.html">Home</a></li>
 				<li>
-					<a href="#" title="service.html">Services</a>
+					<a href="#" data-page="service.html">Services</a>
 					<ul class="submenu">
-						<li><a href="#" title="service.html/Audit & Assurance Services">Audit & Assurance</a></li>
-						<li><a href="#" title="service.html/Accounting & Bookkeeping Services">Accounting & Bookkeeping Services</a></li>
-						<li><a href="#" title="service.html/Corporate Tax Advisory Services">Corporate Tax Advisory</a></li>
+						<li><a href="#" data-page="service.html/Audit & Assurance Services">Audit & Assurance</a></li>
+						<li><a href="#" data-page="service.html/Accounting & Bookkeeping Services">Accounting & Bookkeeping Services</a></li>
+						<li><a href="#" data-page="service.html/Corporate Tax Advisory Services">Corporate Tax Advisory</a></li>
 					</ul>
 				</li>
-				<li><a href="#" title="about.html">About</a></li>
-				<li><a href="#" title="consultant.html">Consultant</a></li>
-				<li><a href="#" title="contact.html">Contact</a></li>
+				<li><a href="#" data-page="about.html">About</a></li>
+				<li><a href="#" data-page="consultant.html">Consultant</a></li>
+				<li><a href="#" data-page="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -60,7 +60,7 @@
 		$(document).ready(function () {
 			$('.menu-item a').on('click', function (event) {
 				event.preventDefault();
-				let page = this.title;
+				let page = $(this).data('page');
 				if (page) {
 					loadPage(page);
 				}
