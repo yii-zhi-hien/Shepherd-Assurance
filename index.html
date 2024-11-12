@@ -67,9 +67,6 @@
 
 	<script>
 		$(document).ready(function () {
-			loadPage('home.html');
-
-			// Set up menu item click to load page content
 			$('.menu-item a').on('click', function (event) {
 				event.preventDefault();
 				let page = $(this).title;
@@ -80,6 +77,8 @@
 				$('.menu-item a').removeClass('selected');
 				$(this).addClass('selected');
 			});
+
+			$('.menu-item').find('a').first().trigger('click');
 		});
 
 		function loadPage(page) {
