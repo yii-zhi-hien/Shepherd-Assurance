@@ -1250,7 +1250,7 @@ a {
     background: #757b62;
     opacity: 1;
     border-color: rgba(117, 123, 98, 0) !important;
-    background: rgba(117, 123, 98, 0) !important;
+    background: rgba(244 244 244) !important;
     backdrop-filter: blur(8px);
     border-radius: 4px !important;
   }
