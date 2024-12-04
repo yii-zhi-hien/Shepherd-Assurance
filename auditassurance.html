@@ -66,10 +66,10 @@
                                     Audit &amp; Assurance
                                 </a>
                                 <a class="dropdown-item text-black display-4" href="accountingbookkeeping.html">
-                                    Accounting &amp; Bookkeeping Services
+                                    Accounting &amp; Bookkeeping
                                 </a>
                                 <a class="dropdown-item text-black display-4" href="taxadvisory.html">
-                                    Corporate Tax Advisory
+                                    Business Tax Advisory
                                 </a>
                             </div>
                         </li>
@@ -139,7 +139,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="StatutoryAudit" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -163,7 +163,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="GrossTurnoverAudtis" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -187,7 +187,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="SolicitorAudits" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -210,7 +210,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="CharityAudits" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -233,7 +233,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="GrantAuditService" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -245,7 +245,9 @@
                             <img src="assets/images/mbr-816x473.jpg" alt="">
                         </div>
                         <div class="item-content">
-                            <h5 class="item-title mbr-fonts-style display-5"><strong>Agreed Upon Procedures (AUP)</strong></h5>
+                            <h5 class="item-title mbr-fonts-style display-5">
+                                <strong>Agreed Upon Procedures (AUP)</strong>
+                            </h5>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 We conduct tailored procedures as agreed upon with you, delivering a comprehensive report on our findings.
                                 AUP engagements are ideal for situations that require limited assurance, such as internal investigations, compliance audits of contracts, or evaluations of financial performance.
@@ -254,7 +256,7 @@
                                 <br>
                             </p>
                             <div class="mbr-section-btn item-footer">
-                                <a href="" class="btn item-btn btn-primary display-7">
+                                <a href="AgreedUponProcedures" class="btn item-btn btn-primary display-7 clickable">
                                     Learn More
                                 </a>
                             </div>
@@ -486,7 +488,39 @@
             </div>
         </div>
     </section>
-    
+
+    <div id="statutoryAuditsWindow" class="modal">
+        <div class="modal-content">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Statutory Audits</strong>
+            </h4>
+            <div class="spacer-30"></div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="line-separator"></div>
+                </div>
+            </div>
+            <div class="spacer-30"></div>
+            <div class="item-wrapper align-left">
+                <div class="counter-container mbr-text mbr-fonts-style display-7">
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            Our statutory audits provide an independent and thorough examination of your company’s financial statements, ensuring they accurately reflect the true financial position of your business.
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            We help you meet all legal and regulatory requirements while delivering clarity and confidence in your financial reporting.
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            Our audits offer assurance to shareholders, investors, and regulators that your financial statements are compliant and reliable, supporting your business’s credibility and trustworthiness.
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <button class="btn item-btn btn-primary display-7" id="closeModal_StatutoryAuditWindow">Close</button>
+        </div>
+    </div>
+
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/smoothscroll/smooth-scroll.js"></script>
     <script src="assets/ytplayer/index.js"></script>
@@ -494,5 +528,37 @@
     <script src="assets/theme/js/script.js"></script>
 
     <input name="animation" type="hidden">
+
+    <script>
+
+        //StatutoryAudit
+        const statutoryAuditsWindow = document.getElementById("statutoryAuditsWindow");
+        const closeButton_StatutoryAuditWindow = document.getElementById("closeModal_StatutoryAuditWindow");
+
+        closeButton_StatutoryAuditWindow.addEventListener("click", () => {
+            statutoryAuditsWindow.style.display = "none";
+        });
+
+        const clickable = document.querySelector(".clickable");
+        clickable.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const href = event.target.getAttribute("href");
+
+            switch (href) {
+                case "StatutoryAudit":
+                    statutoryAuditsWindow.style.display = "block";
+                    break;
+            }
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === statutoryAuditsWindow) {
+                statutoryAuditsWindow.style.display = "none";
+            }
+        });
+
+    </script>
+
 </body>
 </html>
