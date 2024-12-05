@@ -1,6 +1,12 @@
-
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevents the default form submission
+
+    const recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response token
+
+    if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA");
+        return;
+    }
 
     // Get form data
     const formData = new FormData(this);
@@ -11,13 +17,14 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         formObject[key] = value;
     });
     
-    // Create the request payload (you can modify this as needed)
+    // Create the request payload with the reCAPTCHA response
     const requestData = {
         name: formObject.name,
         email: formObject.email,
         phone: formObject.phone,
         type: formObject.enquiryType,
-        comment: formObject.message
+        comment: formObject.message,
+        recaptchaResponse: recaptchaResponse // Add reCAPTCHA response token
     };
 
     // Use fetch to send the data to the server (replace with your backend URL)
@@ -30,11 +37,15 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     })
     .then(response => response.json())
     .then(data => {
-        alert("Thank you for dropping us a message! We will reach out to you shortly.");
-        window.location.reload();
+        if (data.message) {
+            alert("Thank you for dropping us a message! We will reach out to you shortly.");
+            window.location.reload();
+        } else {
+            alert("Failed to send the message. Please try again.");
+        }
     })
     .catch(error => {
         console.error("Error:", error);
-        // alert("An unexpected error occurred. Please try again.");
+        alert("An unexpected error occurred. Please try again.");
     });
 });
