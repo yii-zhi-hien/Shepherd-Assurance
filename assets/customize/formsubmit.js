@@ -10,7 +10,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     formData.forEach((value, key) => {
         formObject[key] = value;
     });
-
+    
     // Create the request payload (you can modify this as needed)
     const requestData = {
         name: formObject.name,
