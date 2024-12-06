@@ -29,7 +29,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         recaptchaResponse: recaptchaResponse // Add reCAPTCHA response token
     };
 
-    Use fetch to send the data to the server (replace with your backend URL)
+    //Use fetch to send the data to the server (replace with your backend URL)
     fetch('https://email-app.shepherdassurance.com/api/send-email', {
         method: 'POST',
         headers: {
