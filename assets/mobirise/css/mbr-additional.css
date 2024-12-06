@@ -3,30 +3,30 @@
 }
 
 #loadingOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    z-index: 9998; /* Ensure it's behind the spinner */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+	z-index: 9998; /* Ensure it's behind the spinner */
 }
 
 #loadingSpinner {
-    position: fixed; /* Fix the position */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust to exact center */
-    z-index: 9999; /* Ensure it's above the overlay */
+	position: fixed; /* Fix the position */
+	top: 50%; /* Center vertically */
+	left: 50%; /* Center horizontally */
+	transform: translate(-50%, -50%); /* Adjust to exact center */
+	z-index: 9999; /* Ensure it's above the overlay */
 }
 
-#loadingSpinner span {
-    color: #ffffff;
-    font-weight: bold;
-}
+	#loadingSpinner span {
+		color: #ffffff;
+		font-weight: bold;
+	}
 
 .spinner-border {
-    color: #ffffff; 
+	color: #ffffff;
 }
 
 .spacer-30 {

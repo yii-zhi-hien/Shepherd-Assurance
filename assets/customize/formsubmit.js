@@ -4,12 +4,9 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     const recaptchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response token
 
     if (!recaptchaResponse) {
-        //alert("Please complete the reCAPTCHA");
-        //return;
+        alert("Please complete the reCAPTCHA");
+        return;
     }
-    
-    showLoading();
-
     // Get form data
     const formData = new FormData(this);
     const formObject = {};
@@ -28,6 +25,8 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         comment: formObject.message,
         recaptchaResponse: recaptchaResponse // Add reCAPTCHA response token
     };
+
+    showLoading();
 
     //Use fetch to send the data to the server (replace with your backend URL)
     fetch('https://email-app.shepherdassurance.com/api/send-email', {
