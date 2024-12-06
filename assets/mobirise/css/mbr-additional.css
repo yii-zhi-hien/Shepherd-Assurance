@@ -2,30 +2,58 @@
 	display: none !important;
 }
 
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 9998; /* Ensure it's behind the spinner */
+}
+
+#loadingSpinner {
+    position: fixed; /* Fix the position */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    z-index: 9999; /* Ensure it's above the overlay */
+}
+
+#loadingSpinner span {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.spinner-border {
+    color: #ffffff; 
+}
+
 .spacer-30 {
 	height: 30px;
 }
 
 .combo-box-wrapper .dropdown-arrow {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            color: #555;
-        }
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	color: #555;
+}
 
 .combo-box-wrapper {
-            position: relative;
-        }
-        .combo-box-wrapper select {
-            width: 100%;
-            padding: 10px 30px 10px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
+	position: relative;
+}
+
+	.combo-box-wrapper select {
+		width: 100%;
+		padding: 10px 30px 10px 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
 
 .line-separator {
 	width: 100%; /* Adjust width of the line */
@@ -157,10 +185,10 @@ body {
 	.display-1 {
 		font-size: 4rem;
 	}
-    
-    .modal-content {
-        width: auto;
-    }
+
+	.modal-content {
+		width: auto;
+	}
 }
 
 @media (max-width: 768px) {
