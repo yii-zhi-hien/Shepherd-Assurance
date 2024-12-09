@@ -165,6 +165,27 @@
 						</div>
 					</div>
 				</div>
+                <div class="item features-image col-12 col-md-6 col-lg-4">
+					<div class="item-wrapper">
+						<div class="item-img">
+							<img src="assets/images/mbr-1-816x544.jpg" alt="" data-slide-to="4" data-bs-slide-to="5">
+						</div>
+						<div class="item-content">
+							<h5 class="item-title mbr-fonts-style display-5">
+								<strong>eXtensible Business Reporting Language (XBRL)</strong>
+							</h5>
+							<p class="mbr-text mbr-fonts-style display-7">
+								we offer XBRL services to help businesses streamline their financial reporting, ensuring accuracy, transparency, and compliance with regulatory requirements.
+								<br>
+							</p>
+							<div class="mbr-section-btn item-footer">
+								<a href="XBRLService" class="btn item-btn btn-primary display-7 clickable">
+									Learn More
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="item features-image col-12 col-md-6 col-lg-4">
 					<div class="item-wrapper">
 						<div class="item-img">
@@ -629,6 +650,66 @@
 			<button class="btn item-btn btn-primary display-7" id="closeModal_FinancialReportingWindow" style="margin:0rem!important">Close</button>
 		</div>
 	</div>
+    <div id="xbrlServiceWindow" class="modal">
+		<div class="modal-content" style="text-align:justify!important">
+			<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+				<strong>eXtensible Business Reporting Language (XBRL)</strong>
+			</h4>
+			<div class="spacer-20"></div>
+			<div class="row">
+				<div class="col-12">
+					<div class="line-separator"></div>
+				</div>
+			</div>
+			<p class="mbr-fonts-style mbr-text mb-4 display-7">
+				We provide preparation of eXtensible Business Reporting Language – XBRL conversion.
+				All Singapore (SG) incorporated companies are required to file financial statements (FS) with ACRA, except for those which are exempted.
+				Some companies will file a full set of FS in XBRL format, while others will file key financial data in XBRL format along with a full set of signed copies of the FS tabled at the annual general meeting and/or circulated to members (AGM FS) in PDF format.
+				If you own a sole proprietorship, partnership, limited liability partnership, or limited partnership, you are not required to file FS with ACRA.
+				For the avoidance of doubt, all SG incorporated companies are required to prepare financial statements, except for those which are dormant relevant companies.
+			</p>
+			<p class="mbr-fonts-style mbr-text display-7 text-underline">
+				<strong>Revised XBRL filing requirements</strong>
+			</p>
+			<p class="mbr-fonts-style mbr-text display-7">
+				ACRA has revised the filing requirements and data elements in XBRL format for companies.
+				This is a part of our efforts to streamline the filing of FS.
+				The effective implementation date for companies to file FS in XBRL format using the revised filing requirements and data elements are as follows:
+			</p>
+			<div class="item-wrapper align-left">
+				<div class="counter-container mbr-text mbr-fonts-style display-7">
+					<ul style="text-align:justify!important">
+						<li style="margin-bottom: 10px;">
+							Companies are <strong>required</strong> to apply the revised filing requirements and data elements on or after 1 May 2021;
+						</li>
+						<li style="margin-bottom: 10px;">
+							Companies can opt to voluntarily apply the revised filing requirements and data elements from 16 May 2020 to 30 April 2021 (both dates inclusive).
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="mbr-fonts-style mbr-text display-7">
+				Our firm have provided 2 templates which to be used by mostly the Companies to meet the revised filing requirements and data elements:
+			</p>
+			<div class="item-wrapper align-left">
+				<div class="counter-container mbr-text mbr-fonts-style display-7">
+					<ul style="text-align:justify!important">
+						<li style="margin-bottom: 10px;">
+							<strong>Full XBRL template – </strong>
+							The number of data elements for this template has been reduced by 50% to about 210 data elements.
+							It will capture the information in primary statements and selected notes to FS.
+						</li>
+						<li style="margin-bottom: 10px;">
+							<strong>Simplified XBRL template - </strong>
+							This template, which replaces XBRL FSH (General), has about 120 data elements.
+							It will capture the complete information in the statements of financial performance and position.
+						</li>
+					</ul>
+				</div>
+			</div>
+			<button class="btn item-btn btn-primary display-7" id="closeModal_XBRLServiceWindow" style="margin:0rem!important">Close</button>
+		</div>
+	</div>
 	<div id="reconciliationServiceWindow" class="modal">
 		<div class="modal-content" style="text-align:justify!important">
 			<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
@@ -1033,6 +1114,14 @@
 		closeModal_FinancialReportingWindow.addEventListener("click", () => {
 			financialReportingWindow.style.display = "none";
 		});
+        
+        //XBRLService
+		const xbrlServiceWindow = document.getElementById("xbrlServiceWindow");
+		const closeModal_XBRLServiceWindow = document.getElementById("closeModal_XBRLServiceWindow");
+
+		closeModal_XBRLServiceWindow.addEventListener("click", () => {
+			xbrlServiceWindow.style.display = "none";
+		});
 
 		//ReconciliationService
 		const reconciliationServiceWindow = document.getElementById("reconciliationServiceWindow");
@@ -1058,7 +1147,6 @@
 			cashFlowManagementWindow.style.display = "none";
 		});
 
-
 		document.querySelectorAll('.clickable').forEach(element => {
 			element.addEventListener('click', function (event) {
 				event.preventDefault();
@@ -1070,6 +1158,10 @@
 
 					case "FinancialReporting":
 						financialReportingWindow.style.display = "block";
+						break;
+                        
+                    case "XBRLService":
+						xbrlServiceWindow.style.display = "block";
 						break;
 
 					case "ReconciliationService":
@@ -1095,6 +1187,10 @@
 
 				case financialReportingWindow:
 					financialReportingWindow.style.display = "none";
+					break;
+
+                case xbrlServiceWindow:
+					xbrlServiceWindow.style.display = "none";
 					break;
 
 				case reconciliationServiceWindow:
