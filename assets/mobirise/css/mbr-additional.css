@@ -33,6 +33,14 @@
 	height: 30px;
 }
 
+.spacer-20 {
+	height: 20px;
+}
+
+.spacer-10 {
+	height: 10px;
+}
+
 .combo-box-wrapper .dropdown-arrow {
 	position: absolute;
 	top: 50%;
