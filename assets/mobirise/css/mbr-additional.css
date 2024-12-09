@@ -29,6 +29,67 @@
 	color: #ffffff;
 }
 
+.contact-us-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.contact-us-button:hover {
+  color: white;
+  background-color: #0056b3;
+}
+
+.custom-ol {
+	list-style-type: none; /* Remove default numbers */
+	counter-reset: custom-counter; /* Initialize a custom counter */
+	padding-left: 0; /* Remove padding from the list */
+}
+
+	/* Custom class for list items in <ol> */
+	.custom-ol > li {
+		position: relative; /* Position for custom numbering */
+		padding-left: 35px; /* Add space for custom numbering */
+	}
+
+		/* Custom numbering only for <ol> items */
+		.custom-ol > li::before {
+			content: counter(custom-counter) ". "; /* Display the custom counter */
+			counter-increment: custom-counter; /* Increment the counter */
+			position: absolute; /* Position it relative to the list item */
+			left: 0; /* Align the number to the left of the item */
+			font-weight: bold; /* Make the number bold */
+		}
+
+	/* Styles for unordered sub-lists (<ul>) */
+	.custom-ol ul {
+		list-style-type: disc; /* Use bullets for the unordered list */
+		padding-left: 35px; /* Indent for sub-lists */
+		margin-top: 10px; /* Add spacing above the sub-list */
+	}
+
+		.custom-ol ul li {
+			padding-left: 0; /* Align sub-list items with the bullets */
+		}
+
+.text-underline {
+	text-decoration: underline !important;
+}
+
+.text-italic {
+	font-style: italic !important;
+}
+
 .spacer-30 {
 	height: 30px;
 }
